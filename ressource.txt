@@ -1,0 +1,1 @@
+https://www.pyimagesearch.com/2015/01/26/multi-scale-template-matching-using-python-opencv/
