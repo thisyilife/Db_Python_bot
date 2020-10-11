@@ -2,9 +2,10 @@ Bot made with Python and OpenCV to perform basic tasks in a Android game (unname
 inspired by https://www.tautvidas.com/blog/2018/02/automating-basic-tasks-in-games-with-opencv-and-python/
 The game is executed via an emulator on computer in order to have the bot recognize the pattern.
 The bot is based on a state machine following the game state:
+
 	- Menu State :
 		Selection of the game mode.
-			
+		
 	- Level Selection :
 		Scrolling to get to an uncompleted level.
 		
