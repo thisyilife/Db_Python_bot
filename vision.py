@@ -12,6 +12,7 @@ class Vision:
             'fermer' : 'assets/fermer.png',
             'gauche' : 'assets/arrow_1.png',
             'droite' : 'assets/arrow_2.png',
+            'bas' : 'assets/arrow_3.png',
             'depart' : 'assets/depart.png',
             'dice' : 'assets/dice.png',
             'event' : 'assets/event.png',
@@ -27,7 +28,8 @@ class Vision:
             'start': 'assets/start.png',
             'ki' : 'assets/ki.png',
             'KO' : 'assets/KO.png',
-            'end': 'assets/end.png'         
+            'end': 'assets/end.png',
+            'end_stage' : 'assets/end_stage.png'         
         }
         
         # reading images in B&W
@@ -72,6 +74,20 @@ class Vision:
         matches = np.where(res >= threshold)
         return matches
 
+    def match_multiple_template(self, name, img = None, threshold = 0.9):
+        if img is None:
+            if self.frame is None:
+                self.refresh_frame()
+            img = self.frame 
+
+        res = cv2.matchTemplate(img, self.templates[name], cv2.TM_SQDIFF)
+
+        #max_val = 1;
+        #while max_val > threshold :
+        (min_val,max_val,minloc,maxloc) = cv2.minMaxLoc(res)
+
+
+        return minloc
     
 
     def find_templates(self, name, image=None, threshold=0.9):

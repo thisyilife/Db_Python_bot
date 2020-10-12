@@ -10,5 +10,5 @@ from game import Game as game
 v = vis()
 c = con()
 g = game(v,c) 
-g.run(state = 'Dices')
+g.run(state = 'Menu')
 #g.test() 
